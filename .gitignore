@@ -1,0 +1,4 @@
+# Excluimos una carpeta
+node_modules/
+# Excluimos los ficheros correspondientes al patrón (extensión)
+*.log
