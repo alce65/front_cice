@@ -19,3 +19,7 @@ body {
 .verde {
     color: darkgreen;
 }
+
+img {
+    width: 45%;
+}
