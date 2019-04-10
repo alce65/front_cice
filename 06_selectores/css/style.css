@@ -1,0 +1,23 @@
+
+/* Selector de descendientes : operador es el espacio*/
+section p {
+    color: brown;
+}
+
+/* Selector de hijo : operadar > */
+
+section>p {
+    color: darkgreen;
+}
+
+/* Selector de hermanos : operador ~ (virgulilla) */
+
+div~p {
+    color: darkblue
+}
+
+/* Selector de hermanos adyacentes : operador + */
+
+div+p {
+    color: darkgoldenrod;
+}

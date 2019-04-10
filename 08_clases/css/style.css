@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    background-color: brown;
+    color: bisque;
+    padding: 2rem;
+}
+
+.main-header-h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header-p {
+    margin-bottom: 0;
+    margin-top: 0.2rem;
+}
+
+.content-wrapper {
+    margin: 2rem;
+}
+
+.main-footer {
+    background-color: brown;
+    color: bisque;
+    padding-top: 1.2rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
