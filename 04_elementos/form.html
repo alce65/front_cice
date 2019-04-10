@@ -48,8 +48,70 @@
                 </ul>
                 <h3>Ejemplo de formulario</h3>
                 <form action="https://jsonplaceholder.typicode.com/users" method="post">
-                    <input type="text" name="nombre" id="" placeholder="Nombre">
-                    <button type="submit">Enviar</button>
+                    <!-- <ul>
+                        <li><input type="text" name="nombre" id="nombre" placeholder="Nombre"></li>
+                        <li><input type="email" name="email" id="email" placeholder="Correo"></li>
+                        <li><button type="submit">Enviar</button></li>
+                    </ul> -->
+                    <fieldset>
+                        <legend>Datos personales</legend>
+                        <div>
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" 
+                                placeholder="Escribe nombre y apellidos" required minlength="3">
+                        </div>
+                        <div>
+                            <label for="email">Correo</label>
+                            <input type="email" name="email" id="email" placeholder="Correo" required>
+                        </div>    
+                        <div>
+                            <label for="passwd">Contraseña</label>
+                            <input type="password" name="passwd" id="passwd" required maxlength="4">
+                        </div>
+                        <div>
+                            <label for="coments">Comentarios</label>
+                            <textarea name="coments" id="coments" cols="30" rows="5"></textarea>
+                        </div>                    
+                    </fieldset>
+                    <fieldset>
+                        <legend>Condiciones</legend>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita voluptatibus quisquam praesentium vero nemo laborum ratione. Autem esse voluptates quasi ad, voluptatem repellendus illo aperiam amet reprehenderit quod velit.</p>
+                        <div>
+                            <input type="checkbox" name="aceptado" id="aceptado" required>
+                            <label for="aceptado">Estoy deacuerdo con las condiciones</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Datos del curso</legend>
+                        <div>
+                            <label for="curso">Curso</label>
+                            <select name="curso" id="curso" required>
+                                <option value="">&nbsp;</option>
+                                <optgroup label="Front">
+                                    <option value="HTML">HTML</option>
+                                    <option value="CSS">CSS</option>
+                                    <option value="JS">JavaScript</option>
+                                </optgroup>
+                                <optgroup label="Back">
+                                    <option value="JV">Java</option>
+                                    <option value="Node">NodeJS</option>                                    
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div>
+                            <p>Sede</p>
+                            <input type="radio" name="sede" id="madrid" value="MD" required>
+                            <label for="madrid">Madrid</label>
+                            <input type="radio" name="sede" id="barna" value="BN">
+                            <label for="barna">Barcelona</label>
+                            <input type="radio" name="sede" id="cadiz" value="CD">
+                            <label for="cadiz">Cádiz</label>
+                        </div>
+                    </fieldset>
+                    <div>
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Borrar</button>
+                    </div>
                 </form>
             </section>
         </main>
