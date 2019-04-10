@@ -1,0 +1,42 @@
+/* Selector de etiqueta  y agruados */
+
+h1, h2 {
+    color: brown;
+}
+
+h1 { 
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem
+}
+
+
+p {
+    color: darkgreen;
+}
+
+/* Selectores de id 
+    Buena practica: NO SE USAN
+*/
+
+#p01 {
+    color: crimson;
+}
+
+/* Selectores de clase */
+
+.resaltado {
+    color: darkblue;
+}
+
+/* Selectores de atributo */ 
+
+[name="nombre"] {
+   background-color: bisque
+}
+
+[required] {
+    border-color:  brown
+}
