@@ -1,0 +1,58 @@
+
+
+section>p::first-letter {
+    font-size: 4rem;
+}
+
+aside p::first-line {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+section div p::before {
+    content: "📙"
+}
+
+p:hover {
+    color: brown;
+}
+
+a:visited {
+    color: chocolate
+}
+
+/* section p:nth-child(1) {
+    color: blue
+} */
+
+section p:nth-of-type(even) {
+    color: blue
+}
+
+/* * {
+    display: inline;
+}
+ */
+
+/* Herencia: 
+    - la fuente si se hereda
+    - el borde no dse hereda 
+*/ 
+
+body {
+    font-family: 'Lato', 'Lucida',  sans-serif;
+    border: 1px solid
+} 
+
+/* * {
+    font-family: 'Lato', 'Lucida',  sans-serif;
+    border: 1px solid
+} */
+
+header {
+    font-family: 'Righteous', cursive;
+}
+
+
+
+
