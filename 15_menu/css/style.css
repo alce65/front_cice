@@ -1,3 +1,7 @@
+*, *::after, *::before, *:after, *:before {
+    box-sizing: border-box
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -23,6 +27,13 @@ body {
 .main-header p {
     margin-bottom: 0;
     margin-top: 0.2rem;
+    /* display: none; */
+    visibility: hidden;
+}
+
+.main-header:hover p {
+    /* display: initial; */
+    visibility: initial;
 }
 
 .menu ol, .menu ul {
@@ -56,6 +67,37 @@ body {
 
 .content-wrapper {
     margin: 2rem;
+   /*  overflow: auto; */
+   
+}
+
+/* .content-wrapper:after {
+    content: "";
+    display: block;
+    clear: both;
+} */
+
+
+.main-content {
+    width: 70%;
+    float: left;
+    background-color: bisque;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.main-aside {
+    width: 30%;
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: gainsboro;
+    border: 1px solid
+}
+
+.clearfix {
+    clear: both;
+    margin-bottom: 2rem;
 }
 
 .main-footer {
