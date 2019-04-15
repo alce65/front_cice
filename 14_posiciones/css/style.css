@@ -1,0 +1,24 @@
+.content-wrapper {
+    margin: 2rem;
+}
+
+section {
+   position: relative;
+}
+
+section p {
+    padding: 1rem;
+    background-color: coral;
+}
+
+.relativo {
+    position: relative;
+    top: 3rem;
+    left: 3rem;
+}
+
+.absoluto {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
