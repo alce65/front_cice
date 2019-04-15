@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+.main-header {
+    background-color: brown;
+    color: bisque;
+    padding: 2rem;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.main-header div {
+    margin: 1rem;
+    position: relative;
+}
+
+.main-header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header p {
+    margin-bottom: 0;
+    margin-top: 0.2rem;
+}
+
+.menu ol, .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: inherit;
+    text-decoration: none;    
+}
+
+.main-menu {
+    border: 1px solid;
+    border-radius: 5px;
+    width: fit-content;
+    position: absolute;
+    top: 2px;
+    right: 1rem;
+}
+
+.main-menu li {
+    display: inline-block;
+}
+
+.main-menu a {
+    display: block;
+    padding: 1rem;
+}
+
+.content-wrapper {
+    margin: 2rem;
+}
+
+.main-footer {
+    background-color: brown;
+    color: bisque;
+    padding-top: 1.2rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.social-menu {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem
+}
+
+.social-menu li {
+    display: inline;
+}
