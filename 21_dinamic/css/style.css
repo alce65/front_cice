@@ -1,0 +1,37 @@
+section {
+    display: flex;
+    padding: 4rem;
+}
+ 
+a {
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+    border: 1px solid gainsboro;
+    color: gainsboro;
+    background-color: azure;
+    font-weight: bold;
+    font-size: 1rem;
+    /* transition-property: all;
+    transition-duration: 3s;
+    transition-delay: 1s;
+    transition-timing-function: ease-in */
+}
+
+div {
+    width: 0px;
+    transition-property: all;
+    transition-duration: 3s;
+    transition-delay: 1s;
+    transition-timing-function: ease-in; 
+}
+
+
+a:hover+div {
+    /* color: black; */
+    background-color: gray;
+    /* font-size: 2rem;
+    padding: 2rem; */
+    width: 20%;
+    /* transform: scale(2) */
+}
