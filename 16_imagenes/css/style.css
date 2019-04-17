@@ -29,30 +29,38 @@ p {
 }
 
 
-.fondos {
+/* .fondos {
     height: 100vh;    
     background-color: #468CE1;
     background-image: url(../assets/3boats.jpg);
     background-repeat: no-repeat;
-    /*background-size: contain;*/
+    // background-size: contain;
     background-size: cover;
     background-blend-mode: soft-light;
-}
+} */
 
-/* .fondos::after {
+.fondos {
+    height: 100vh;
+    position: relative;
+}  
+
+.fondos::after {
     content: "";
     display: block;
-    height: 100vh;    
+    height: 100%;    
+    width: 100%;
+    position: absolute;
+    top: 0;
     background-color: #468CE1;
     background-image: url(../assets/3boats.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.5; 
-} */
+    opacity: 0.4; 
+    /* Hecho en clase el miercoles */
+} 
 
 .fondos h2 {
     text-align: center;
     padding-top: 25vh;
-    /* color: #F12524 */
-    color: aliceblue;
+    color: #F12524;
 }
