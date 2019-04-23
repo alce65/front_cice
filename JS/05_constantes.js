@@ -21,7 +21,8 @@ const user = {
 user.altura = 179
 user.name = 'Carlos'
 
-user = 23
+// user = 26 daría un error
+// user = {} daría un error
 
 console.log (user)
 console.log (user.name)

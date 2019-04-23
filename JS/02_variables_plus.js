@@ -39,4 +39,11 @@ function mostrar(input) {
     console.log('------------')
 }
 
+
+/* let mostrar = function (input) {
+    console.log('El dato recibido es ', input)
+    console.log('El tipo del dato es ', typeof input)
+    console.log('------------')
+} */
+
 mostrar(mostrar)

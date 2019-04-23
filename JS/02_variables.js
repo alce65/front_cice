@@ -7,7 +7,15 @@ let edad = 34 // Declarar e inicializar
 
 // Tipos de datos
 
+/*
+En otros lenguajes hay declaracion EXPLICITA y OBLIGATORIA de tipos
+int x -> variable x de tipo entero sin valor
 
+En JS los tipos son
+- debiles: no se declaran explicitamente: son IMPLICITOS al valor
+- dinámicos: pueden cambiar
+
+*/
 
 // undefined
 let data
@@ -50,3 +58,5 @@ function mostrar() {}
 
 console.log(mostrar)
 console.log(typeof mostrar)
+
+mostrar()

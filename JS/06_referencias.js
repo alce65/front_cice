@@ -8,11 +8,13 @@ function duplicar(x) {
     return x
 }
 
+let user1 = {nombre: 'Pepe', edad: 23}
+matricular(user1, 'HTML')
+console.log(user1)
+let user2 = {nombre: 'Rosa'}
+matricular(user2)
+console.log(user2)
 
-let user = {nombre: 'Pepe', edad: 23}
-matricular(user)
-console.log(user)
-
-function matricular(obj) {
-    obj.curso = 'JavaScript'
+function matricular(obj, curso = 'JavaScript') {
+    obj.curso = curso
 }
