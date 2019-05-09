@@ -57,9 +57,9 @@
     }
 
 
-  (function () {
+(function () {
       let miDNI = '50.821.728  / P'
-      // console.log(cacalcularLetraDNI(miDNI))
+      // console.log(calcularLetraDNI(miDNI))
       console.log(isLetraDNIValida(miDNI))
       //console.log(formateaNumero(miDNI))
   })()
