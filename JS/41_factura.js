@@ -28,8 +28,8 @@
         NIF: 'M-64584741'},
     items: [
         {descripcion: 'Libro 1', precio: 20, cantidad: 12},
-        {descripcion: 'Libro 2', precio: 24, cantidad: 10},
-        {descripcion: 'Libro 3', precio: 34, cantidad: 7},
+        {descripcion: 'Libro 2', precio: 24.8, cantidad: 10},
+        {descripcion: 'Libro 3', precio: 34.7, cantidad: 7},
     ],
     importeTotal: 0, 
     tipoIVA: 0.23, 
@@ -42,8 +42,9 @@
         this.importeTotal = this.calculaImporte()
     },
     muestraImporte: function () {
-        this.actualizaImporte()
-        let msg = 'El importe total (IVA incluido) es ' + this.importeTotal.toFixed(2) + ' €'
+        // this.actualizaImporte()
+        // let msg = 'El importe total (IVA incluido) es ' + this.importeTotal.toFixed(2) + ' €'
+        let msg = 'El importe total (IVA incluido) es ' + this.calculaImporte().toFixed(2) + ' €'
         console.log(msg)
     }
 }
