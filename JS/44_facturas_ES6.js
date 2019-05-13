@@ -2,15 +2,6 @@
  * Reacemos el ejercicio empleando una funcion constructora
  */
 
-class Empresa {
-    constructor (nombre, direccion, telefono, NIF) {
-        this.nombre = nombre
-        this.direccion = direccion
-        this.telefono = telefono
-        this.NIF = NIF
-    }
-}
-
 class Item  { 
     constructor (descripcion, precio, cantidad) {
         this.descripcion = descripcion
@@ -21,6 +12,7 @@ class Item  {
 
 class Factura {
     constructor  (cliente, tipoIVA, formaPago) {
+        // this.empresa = new Empresa('Ediciones Boracay', 'c/ Pez','916583764', 'B-64539874')
         this.cliente = cliente
         this.items = []
         this.tipoIVA = tipoIVA
@@ -42,8 +34,14 @@ class Factura {
     }
 }
 
-// Factura.empresa = new Empresa('Ediciones Boracay', 'c/ Pez','916583764', 'B-64539874')
-
+class Empresa {
+    constructor (nombre, direccion, telefono, NIF) {
+        this.nombre = nombre
+        this.direccion = direccion
+        this.telefono = telefono
+        this.NIF = NIF
+    }
+}
 
 (function () {
 
