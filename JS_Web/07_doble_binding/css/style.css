@@ -1,0 +1,15 @@
+section {
+    min-height: 80vh;
+    display: flex;
+    
+    /*Alineacion en el eje principal : por defecto flex-start*/
+   justify-content: center;
+   /*Alineacion en el eje secundario : por defecto stretch*/
+   align-items: center;
+}
+
+.item-flex {
+    background-color: rgba(250, 128, 114, 0.2);
+    text-align: center;
+    padding: 2rem;
+}
