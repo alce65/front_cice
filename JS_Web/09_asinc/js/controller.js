@@ -40,15 +40,15 @@ export function controller() {
     function leerDatos() {
 
         let i
-        // Lectura síncrona
-        // i = 33
-        // Lectura síncrona
+        // Lectura síncrona: se supone que accedemos a un servidor y eso no existe
+        // i =  '33fdfss747474'
+        // Lectura asíncrona
         setTimeout(() => {
-            i = 33
+            i = '33fdfss747474'
             mostrarDatos()
         }, 1000);
 
-        // mostrarDatos() // el resultado sería undefined
+        //mostrarDatos() // el resultado sería undefined
 
         function mostrarDatos() {
             console.log(i)
