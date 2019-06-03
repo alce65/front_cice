@@ -1,0 +1,19 @@
+.control-group label,
+.control-group input {
+    display: block;
+    width: 100%;
+}
+
+.control-group label {
+    margin-bottom: 1rem;
+}
+
+.control-group input {
+    border: 0;
+    border-bottom: 1px solid grey;
+    line-height: 1.2rem;
+}
+
+body>section:nth-child(2)>div:nth-child(2)>input {
+    background-color: coral
+}
