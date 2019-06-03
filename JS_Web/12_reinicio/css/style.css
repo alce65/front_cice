@@ -1,3 +1,8 @@
+.control-group {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .control-group label,
 .control-group input {
     display: block;
@@ -16,4 +21,9 @@
 
 body>section:nth-child(2)>div:nth-child(2)>input {
     background-color: coral
+}
+
+section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

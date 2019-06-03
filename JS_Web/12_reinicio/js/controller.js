@@ -1,8 +1,12 @@
-export function controller() {
+export function controller(ev) {
 
     // Experimentos 
 
+
+
+
     console.log('Cargado el controller')
+    console.dir(ev)
 
     const oPerson = {nombre: 'Pepe', edad: 22}
     oPerson.edad = 23
@@ -25,24 +29,79 @@ export function controller() {
 
     // 1. Referencia a los Nodos del DOM que me interesan
 
-    const inNombre =  document.querySelector('#inNombre')
+    /* const inNombre =  document.querySelector('#inNombre')
     const outSaludo =  document.querySelector('#outSaludo')
+    */
 
-    console.dir(inNombre)
-    console.dir(outSaludo)
+    const nodos = {
+        inNombre: document.querySelector('#inNombre'),
+        inCorreo: document.querySelector('#inCorreo'),
+        btnSaludar: document.querySelector('#btnSaludar'),
+        btnBorrar: document.querySelector('#btnBorrar'),
+        outSaludo: document.querySelector('#outSaludo')
+    }
+    
 
     // 2. Definir los manejadores de eventos
 
-    inNombre.addEventListener('input', onInputSaludar)
+    nodos.inNombre.addEventListener('input', onInputSaludar)
+    // nodos.inNombre.addEventListener('change', onChangeSaludar)
+    nodos.inNombre.addEventListener('change', onSaludar)
+    // nodos.btnSaludar.addEventListener('click', onClickSaludar )
+    nodos.btnSaludar.addEventListener('click', onSaludar )
+    nodos.btnBorrar.addEventListener('click', onSaludar)
 
     // 3. Implemantar los manejadores de eventos
 
     function onInputSaludar() {
-        if (inNombre.value) {
-            outSaludo.innerHTML = ` Hola ${inNombre.value}`
+        console.log('input', nodos.inNombre.value)
+        /* if (nodos.inNombre.value) {
+            nodos.outSaludo.innerHTML = ` Hola ${nodos.inNombre.value}`
         } else {
-            outSaludo.innerHTML = ``
+            nodos.outSaludo.innerHTML = ``
+        } */
+    }
+    
+    function onChangeSaludar() {
+        console.log('change', nodos.inNombre.value)
+        /* if (nodos.inNombre.value) {
+            nodos.outSaludo.innerHTML = ` Hola ${nodos.inNombre.value}`
+        } else {
+            nodos.outSaludo.innerHTML = ``
+        } */
+    }
+
+
+    function onClickSaludar() {
+        if (nodos.inNombre.value) {
+            nodos.outSaludo.innerHTML = ` Hola ${nodos.inNombre.value}`
+        } else {
+            nodos.outSaludo.innerHTML = ``
         }
-    }   
+    }
+
+    function onSaludar(ev) {
+        console.dir(ev)
+        let msg = ''
+        if (nodos.inNombre.value) {
+            msg = ` Hola ${nodos.inNombre.value}`
+        } else {
+            msg = ``
+        } 
+        switch (ev.type) {
+            case 'change':
+                msg += ` has cambiado de input` 
+                break;
+            case 'click':
+                if (ev.target.id == 'btnSaludar') {
+                    msg += ` has pulsado el boton "Saludar"` 
+                } else if (ev.target.id = 'btnBorrar'){
+                    msg = ` has pulsado el boton "Borrar"` 
+                    nodos.inNombre.value = ''
+                }
+                break;
+            }
+        nodos.outSaludo.innerHTML = msg
+    }
 }
 
