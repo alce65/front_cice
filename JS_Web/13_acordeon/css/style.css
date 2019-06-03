@@ -1,0 +1,19 @@
+.question {
+    color: brown;
+    cursor: pointer;
+    font-size: 1.2;
+}
+
+.question::before{
+    content: '¿'
+} 
+
+.question::after {
+    content: '?'
+}
+
+.destacado {
+    font-size: 1.3rem;
+    color: bisque;
+    background-color: brown;
+}
