@@ -1,0 +1,73 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header, footer {
+    background-color: brown;
+    color: bisque;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 90%;
+    margin: 1rem auto;
+}
+
+
+.control-group  label, input {
+    display: block;
+    width: 100%;
+}
+
+.control-group  input {
+    border: 0px;
+    border-bottom: 1px solid gray
+}
+
+.flex {
+    display: flex;
+}
+
+.output {
+    min-height: 60vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.lista {
+    color: brown;
+    background-color: bisque;
+    width: 50%;
+    padding: 1rem 0.2rem;
+}
+
+.tabla {
+    color: brown;
+    background-color: bisque; 
+    width: 50%;
+    padding: 1rem 0.2rem;
+}
+
+
+.lista ol, .lista ul {
+    list-style: lower-greek;
+    margin: 0;
+    /* padding: 0; */
+}
+
+.tabla tr:nth-of-type(2n) {
+    background-color: darkkhaki;
+}
+
+.borrar {
+    font-size: 0.8rem;
+    cursor: pointer;
+}
