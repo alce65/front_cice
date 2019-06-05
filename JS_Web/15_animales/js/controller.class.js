@@ -10,6 +10,7 @@ export class Controller {
         this.btnClear = document.querySelector('#btnClear')
         this.lista = document.querySelector('.lista')
         this.tabla = document.querySelector('.tabla')
+        this.dlgConfirmarBorrado = document.querySelector('#dlgConfirmarBorrado')
 
         // 2.Manejadores de eventos
         this.inAnimal.addEventListener('change', this.addAnimal.bind(this))
@@ -22,7 +23,11 @@ export class Controller {
         this.crearTabla()
         
         this.aEraser = document.querySelectorAll('.borrar')
-        this.aEraser.forEach( item => item.addEventListener('click', this.borrarAnimal.bind(this)))
+        this.aEraser.forEach( 
+            item => item.addEventListener(
+                'click', this.avisarBorrado.bind(this),
+                )
+            )
     }
 
     addAnimal() {
@@ -43,25 +48,53 @@ export class Controller {
         this.removeStorageAnimales() 
     }
 
-    borrarAnimal(ev) {
-        console.log(ev)
-        console.log(ev.target.childElementCount)
+    avisarBorrado(ev) {
+
+        let btnBorrarSi = document.querySelector('#btnBorrarSi')
+        let btnBorrarNo = document.querySelector('#btnBorrarNo')
+
+        btnBorrarSi = addEventListener('click', this.borrarAnimal.bind(this))
+        btnBorrarNo = addEventListener('click', this.borrarAnimal.bind(this))
+
+        console.log('Abrir modal')
+        console.dir(ev.target)
+        this.dlgConfirmarBorrado.open = true;
+        //this.dlgConfirmarBorrado.showModal();
+    }
+
+    borrarAnimal(ev) { 
+       console.log('Borrar modal')  
+       console.dir(ev.target)
+      if (ev.target.id == 'btnBorrarSi') {
+            this.aAnimales.splice(ev.target.dataset.index,1)
+            this.saveStorageAnimales()
+            this.crearLista()
+            this.crearTabla()
+        }
+        this.dlgConfirmarBorrado.open = false;
+        //this.dlgConfirmarBorrado.close()
     }
 
     crearLista() {
         let lista = '<ul>'
-        this.aAnimales.forEach( item => lista += `<li>${item} <i class="borrar far fa-trash-alt"></i></li>`)
+        this.aAnimales.forEach( (item,i) => lista += `<li>${item} <i data-index="${i}" class="borrar far fa-trash-alt"></i></li>`)
         lista += '</ul>'
         this.lista.innerHTML = lista
-        this.aEraser = document.querySelectorAll('.borrar')
+        //this.lista = document.querySelector('.lista')
+        //this.aEraser = document.querySelectorAll('.borrar')
+        //this.aEraser.forEach( item => item.addEventListener('click', this.avisarBorrado.bind(this)))
     }
 
     crearTabla() {
         let tabla = '<table>'
-        this.aAnimales.forEach( item => tabla += `<tr><td>${item}</td></tr>`)
+        this.aAnimales.forEach( (item, i) => tabla += `<tr><td>${item} <i data-index=${i} class="borrar far fa-trash-alt"></i></td></tr>`)
         tabla += '</table>'
         this.tabla.innerHTML = tabla
+        //this.tabla = document.querySelector('.tabla') 
+        //this.aEraser = document.querySelectorAll('.borrar')
+        //this.aEraser.forEach( item => item.addEventListener('click', this.avisarBorrado.bind(this)))
     }
+
 
     saveStorageAnimales() {
         window.localStorage.setItem('animales', JSON.stringify(this.aAnimales))

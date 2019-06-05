@@ -15,7 +15,7 @@
     <header>
         <h1> Lista de Animales</h1>
     </header>
-    <section>
+    <section class="animales">
         <div class='new'>
             <div class="control-group">
                 <label for="animal">Nuevo animal</label>
@@ -26,10 +26,16 @@
                 </div>
             </div>
         </div>
+        <dialog id='dlgConfirmarBorrado'> 
+            <p>Estas seguro de borrar este animal</p>
+            <button type="button" id="btnBorrarSi">Si</button>
+            <button type="button" id="btnBorrarNo">No</button>
+        </dialog>        
         <div class="flex output">
                 <div class='lista'>...</div>
                 <div class='tabla'>...</div>        
         </div>
+
     </section>
     <footer>
         <address>Alejandro Cerezo</address>

@@ -16,9 +16,10 @@ header, footer {
     align-items: center;
 }
 
-section {
+section.animales {
     width: 90%;
     margin: 1rem auto;
+    position: relative;
 }
 
 
@@ -70,4 +71,11 @@ section {
 .borrar {
     font-size: 0.8rem;
     cursor: pointer;
+}
+
+dialog {
+    border: none;
+    background-color: brown;
+    color: bisque;
+    text-align: center;
 }
