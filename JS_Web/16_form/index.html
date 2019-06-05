@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Formulario</h1>
+    </header>
+    <section class="curso">
+        <form action="https://jsonplaceholder.typicode.com/users" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="control-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" 
+                        placeholder="Escribe nombre y apellidos" required minlength="3">
+                </div>
+                <div class="control-group">
+                    <label for="email">Correo</label>
+                    <input type="email" name="email" id="email" placeholder="Correo" required>
+                </div>    
+                <div class="control-group">
+                    <label for="passwd">Contraseña</label>
+                    <input type="password" name="passwd" id="passwd" required maxlength="4">
+                </div>
+                <div class="control-group">
+                    <label for="coments">Comentarios</label>
+                    <textarea name="coments" id="coments" cols="30" rows="5"></textarea>
+                </div>                    
+            </fieldset>
+            <fieldset>
+                <legend>Condiciones</legend>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita voluptatibus quisquam praesentium vero nemo laborum ratione. Autem esse voluptates quasi ad, voluptatem repellendus illo aperiam amet reprehenderit quod velit.</p>
+                <div class="check-group">
+                    <input type="checkbox" name="aceptado" id="aceptado" required>
+                    <label for="aceptado">Estoy deacuerdo con las condiciones</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Datos del curso</legend>
+                <div class="control-group">
+                    <label for="curso">Curso</label>
+                    <select name="curso" id="curso" required>
+                        <option value="">&nbsp;</option>
+                        <optgroup label="Front">
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="JS">JavaScript</option>
+                        </optgroup>
+                        <optgroup label="Back">
+                            <option value="JV">Java</option>
+                            <option value="Node">NodeJS</option>                                    
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="radio-group">
+                    <p>Sede</p>
+                    <input type="radio" name="sede" id="madrid" value="MD" required>
+                    <label for="madrid">Madrid</label>
+                    <input type="radio" name="sede" id="barna" value="BN">
+                    <label for="barna">Barcelona</label>
+                    <input type="radio" name="sede" id="cadiz" value="CD">
+                    <label for="cadiz">Cádiz</label>
+                </div>
+            </fieldset>
+            <div class="button-group">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <address>
+            Alejandro Cerezo
+        </address>
+    </footer>
+</body>
+</html>
