@@ -6,27 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Formularios</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bootstrap.js" type="module"></script>
 </head>
 <body>
     <header>
         <h1>Formulario</h1>
     </header>
     <section class="curso">
-        <form action="https://jsonplaceholder.typicode.com/users" method="post">
+        <form id="form_curso" action="https://jsonplaceholder.typicode.com/users" method="post">
             <fieldset>
                 <legend>Datos personales</legend>
                 <div class="control-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" 
-                        placeholder="Escribe nombre y apellidos" required minlength="3">
+                        placeholder="Escribe tu nombre" requiredzz minlength="3">
+                </div>
+                <div class="control-group">
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" name="apellido" id="apellido" 
+                        placeholder="Escribetus apellidos" requiredzz minlength="3">
                 </div>
                 <div class="control-group">
                     <label for="email">Correo</label>
-                    <input type="email" name="email" id="email" placeholder="Correo" required>
+                    <input type="email" name="email" id="email" placeholder="Correo" requiredzz>
                 </div>    
                 <div class="control-group">
                     <label for="passwd">Contraseña</label>
-                    <input type="password" name="passwd" id="passwd" required maxlength="4">
+                    <input type="password" name="passwd" id="passwd" requiredzz maxlength="4">
                 </div>
                 <div class="control-group">
                     <label for="coments">Comentarios</label>
@@ -37,15 +43,19 @@
                 <legend>Condiciones</legend>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita voluptatibus quisquam praesentium vero nemo laborum ratione. Autem esse voluptates quasi ad, voluptatem repellendus illo aperiam amet reprehenderit quod velit.</p>
                 <div class="check-group">
-                    <input type="checkbox" name="aceptado" id="aceptado" required>
+                    <input type="checkbox" name="aceptado" id="aceptado" requiredzz>
                     <label for="aceptado">Estoy deacuerdo con las condiciones</label>
+                </div>
+                <div class="check-group">
+                    <input type="checkbox" name="misdatos" id="misdatos">
+                    <label for="misdatos">Estoy deacuerdo con ceder mis datos</label>
                 </div>
             </fieldset>
             <fieldset>
                 <legend>Datos del curso</legend>
                 <div class="control-group">
                     <label for="curso">Curso</label>
-                    <select name="curso" id="curso" required>
+                    <select name="curso" id="curso" requiredzz>
                         <option value="">&nbsp;</option>
                         <optgroup label="Front">
                             <option value="HTML">HTML</option>
@@ -58,9 +68,29 @@
                         </optgroup>
                     </select>
                 </div>
+                <!-- <div class="control-group">
+                    <label for="turno">Turno</label>
+                    <select name="turno" id="turno" requiredzz>
+                        <option value="">&nbsp;</option>
+                        <option value="M">Mañana</option>
+                        <option value="T">Tarde</option>
+                        <option value="N">Noche</option>
+                    </select>
+                </div> -->
+    
+                <div class="radio-group">
+                    <p>Turno</p>
+                    <input type="radio" name="turno" id="mañana" value="M" requiredzz>
+                    <label for="mañana">Mañana</label>
+                    <input type="radio" name="turno" id="tarde" value="T">
+                    <label for="tarde">Tarde</label>
+                    <input type="radio" name="turno" id="noche" value="N">
+                    <label for="noche">Noche</label>
+                </div>
+
                 <div class="radio-group">
                     <p>Sede</p>
-                    <input type="radio" name="sede" id="madrid" value="MD" required>
+                    <input type="radio" name="sede" id="madrid" value="MD" requiredzz>
                     <label for="madrid">Madrid</label>
                     <input type="radio" name="sede" id="barna" value="BN">
                     <label for="barna">Barcelona</label>
@@ -74,6 +104,12 @@
             </div>
         </form>
     </section>
+    <dialog id="confirmar">
+        <p>¿Desea confirmar el envío de los datos?</p>
+        <output id="datosOutput"></output>
+        <button id="btnConfirmar" type="button">Si</button>
+        <button id="btnNoConfirmar" type="button">No</button>
+    </dialog>
     <footer>
         <address>
             Alejandro Cerezo
