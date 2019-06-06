@@ -1,0 +1,19 @@
+section {
+    display: flex;
+    align-items: center
+}
+figure {
+    width: 50%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.button {
+    background-color: darkgray;
+    border: 2px dimgray groove;
+    padding: .6rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 2px darkgray;
+}
