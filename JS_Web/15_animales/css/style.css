@@ -68,7 +68,7 @@ section.animales {
     background-color: darkkhaki;
 }
 
-.borrar {
+.borrar, .editar {
     font-size: 0.8rem;
     cursor: pointer;
 }

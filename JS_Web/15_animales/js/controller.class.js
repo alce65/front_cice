@@ -86,34 +86,69 @@ export class Controller {
         //this.dlgConfirmarBorrado.close()
     }
 
+    editarItem(ev) {
+        this.animalSeleccionado = ev.target.dataset.index
+        console.log(this.animalSeleccionado)
+        console.dir(ev.target.previousElementSibling)
+        ev.target.previousElementSibling.contentEditable = true
+    }
+
+    onChangeAmimal(ev) {
+        ev.target.contentEditable = false
+        this.aAnimales[this.animalSeleccionado] = ev.target.textContent
+        console.log(this.aAnimales)
+        this.saveStorageAnimales()
+        this.actualizarView()
+    }
+
     // Métodos que completan el UI
 
     actualizarView() {
         this.crearLista()
         this.crearTabla()
-        this.ajustarBorradores()
+        this.ajustarItems()
     }
 
     crearLista() {
         let lista = '<ul>'
-        this.aAnimales.forEach( (item,i) => lista += `<li>${item} <i data-index="${i}" class="borrar far fa-trash-alt"></i></li>`)
+        this.aAnimales.forEach( (item,i) => lista += `
+        <li>
+                <span class="animal-item">${item}</span> 
+                <i data-index="${i}" class="editar fas fa-edit"></i>
+                <i data-index="${i}" class="borrar far fa-trash-alt"></i>
+        </li>`)
         lista += '</ul>'
         this.lista.innerHTML = lista
     }
 
     crearTabla() {
         let tabla = '<table>'
-        this.aAnimales.forEach( (item, i) => tabla += `<tr><td>${item} <i data-index=${i} class="borrar far fa-trash-alt"></i></td></tr>`)
+        this.aAnimales.forEach( (item, i) => tabla += `<tr><td>
+            <span class="animal-item">${item}</span> 
+            <i data-index="${i}" class="editar fas fa-edit"></i>
+            <i data-index="${i}" class="borrar far fa-trash-alt"></i>
+        </td></tr>`)
         tabla += '</table>'
         this.tabla.innerHTML = tabla
     }
 
-    ajustarBorradores() {
+    ajustarItems() {
         this.aEraser = document.querySelectorAll('.borrar')
         this.aEraser.forEach( 
             item => item.addEventListener(
                 'click', this.avisarBorrado.bind(this),
             )
+        )
+        this.aEdit = document.querySelectorAll('.editar')
+        this.aEdit.forEach( 
+            item => item.addEventListener(
+                'click', this.editarItem.bind(this),
+            )
+        )
+        this.aItems = document.querySelectorAll('.animal-item')
+        this.aItems.forEach(
+            item => item.addEventListener(
+                    'blur', this.onChangeAmimal.bind(this) )
         )
     }
 
