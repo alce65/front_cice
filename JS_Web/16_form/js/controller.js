@@ -1,3 +1,5 @@
+import { isLetraDNIValida } from "./dni.js";
+
 export function controller() {
     console.log('Controller cargado')
 
@@ -7,6 +9,17 @@ export function controller() {
 
     form_curso.addEventListener('submit', onSubmit)
 
+    let dni =  document.querySelector('#dni')
+    
+    dni.setCustomValidity('Letra del DNI incorrecta')
+    dni.addEventListener('change', () => {
+        console.dir(dni)
+        if (isLetraDNIValida(dni.value)) {
+            dni.setCustomValidity('')
+        }        
+    } )
+
+
     function onSubmit(ev) {
         console.log('Formulario enviado')
         ev.preventDefault()
@@ -14,7 +27,16 @@ export function controller() {
         let aControles = document.querySelectorAll(`[type="text"], 
                                                         [type="email"], 
                                                         [type="password"], 
+                                                        [type="date"],
                                                         textarea`)
+
+        for (let i = 0; i < aControles.length; i++) {
+            const item = aControles[i];
+            if(!validate(item)) {
+                return
+            }
+        }
+                                                
 
         aControles.forEach(item => formData[item.id] = item.value)                                        
         
@@ -44,7 +66,7 @@ function setRadio(radio, data) {
         item => {
             if (item.checked) {
                 // data[item.name] = item.value
-                data[item.name] = {id: item.id, value: item.value}
+                data[item.name] = {id: item.value, value: item.id}
                 return
             }
         }
@@ -54,8 +76,8 @@ function setRadio(radio, data) {
 function setSelect(select, data) {
     console.dir(select)
     data[select.name] = {
-        clave: select[select.selectedIndex].value, 
-        nombre: select[select.selectedIndex].text
+        id: select[select.selectedIndex].value, 
+        value: select[select.selectedIndex].text
     }
     /* {
         clave: select.selectedOptions[0].value, 
