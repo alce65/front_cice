@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bootstrap.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <h1>Formulario</h1>
+    </header>
+    <section class="curso">
+        <form id="form_curso" action="https://jsonplaceholder.typicode.com/users" method="post" novalidate>
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div class="control-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" 
+                        placeholder="Escribe tu nombre" required minlength="2">
+                    <p hidden class="error"></p>
+                </div>
+                <div class="control-group">
+                    <label for="apellido">Apellidos</label>
+                    <input type="text" name="apellido" id="apellido" 
+                        placeholder="Escribe tus apellidos" required minlength="3">
+                    <p hidden class="error"></p>
+                </div>
+                <div class="control-group">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" id="dni" 
+                        placeholder="Escribe tus DNI" required>
+                    <p hidden class="error"></p>
+                </div>                
+                <div class="control-group">
+                    <label for="email">Correo</label>
+                    <input type="email" name="email" id="email" placeholder="Correo" required>
+                    <p hidden class="error"></p>
+                </div>    
+                <div class="control-group">
+                    <label for="passwd">Contraseña</label>
+                    <input type="password" name="passwd" id="passwd" 
+                    title="at least 6 characters, at least 1 upper case character, at least 1 lower case character, at least 1 numerical character & at least 1 special character"
+                    required pattern="(?=^.{6,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*">
+                    <p hidden class="error"></p>
+                </div>
+                <div class="control-group">
+                    <label for="nacim">Fecha de nacimiento</label>
+                    <input type="date" name="nacim" id="nacim">
+                </div>
+                <div class="control-group">
+                    <label for="coments">Comentarios</label>
+                    <textarea name="coments" id="coments" cols="30" rows="5"></textarea>
+                </div>                    
+            </fieldset>
+            <fieldset>
+                <legend>Condiciones</legend>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita voluptatibus quisquam praesentium vero nemo laborum ratione. Autem esse voluptates quasi ad, voluptatem repellendus illo aperiam amet reprehenderit quod velit.</p>
+                <div class="check-group">
+                    <input type="checkbox" name="aceptado" id="aceptado" required>
+                    <label for="aceptado">Estoy deacuerdo con las condiciones</label>
+                    <p hidden class="error"></p>
+                </div>
+                <div class="check-group">
+                    <input type="checkbox" name="misdatos" id="misdatos">
+                    <label for="misdatos">Estoy deacuerdo con ceder mis datos</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Datos del curso</legend>
+                <div class="control-group">
+                    <label for="curso">Curso</label>
+                    <select name="curso" id="curso" required>
+                        <option value="">&nbsp;</option>
+                        <optgroup label="Front">
+                            <option value="HTML">HTML</option>
+                            <option value="CSS">CSS</option>
+                            <option value="JS">JavaScript</option>
+                        </optgroup>
+                        <optgroup label="Back">
+                            <option value="JV">Java</option>
+                            <option value="Node">NodeJS</option>                                    
+                        </optgroup>
+                    </select>
+                    <p hidden class="error"></p>
+                </div>
+                <!-- <div class="control-group">
+                    <label for="turno">Turno</label>
+                    <select name="turno" id="turno" requiredzz>
+                        <option value="">&nbsp;</option>
+                        <option value="M">Mañana</option>
+                        <option value="T">Tarde</option>
+                        <option value="N">Noche</option>
+                    </select>
+                </div> -->
+    
+                <div class="radio-group">
+                    <p>Turno</p>
+                    <input type="radio" name="turno" id="mañana" value="M" required>
+                    <label for="mañana">Mañana</label>
+                    <input type="radio" name="turno" id="tarde" value="T">
+                    <label for="tarde">Tarde</label>
+                    <input type="radio" name="turno" id="noche" value="N">
+                    <label for="noche">Noche</label>
+                    <p hidden class="error"></p>
+                </div>
+
+                <div class="radio-group">
+                    <p>Sede</p>
+                    <input type="radio" name="sede" id="madrid" value="MD" required>
+                    <label for="madrid">Madrid</label>
+                    <input type="radio" name="sede" id="barna" value="BN">
+                    <label for="barna">Barcelona</label>
+                    <input type="radio" name="sede" id="cadiz" value="CD">
+                    <label for="cadiz">Cádiz</label>
+                    <p hidden class="error"></p>
+                </div>
+            </fieldset>
+            <div class="button-group">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar</button>
+            </div>
+        </form>
+    </section>
+    <dialog id="confirmar">
+        <p>¿Desea confirmar el envío de los datos?</p>
+        <output id="datosOutput"></output>
+        <button id="btnConfirmar" type="button">Si</button>
+        <button id="btnNoConfirmar" type="button">No</button>
+    </dialog>
+    <footer>
+        <address>
+            Alejandro Cerezo
+        </address>
+    </footer>
+</body>
+</html>
