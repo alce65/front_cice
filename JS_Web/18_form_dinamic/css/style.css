@@ -1,0 +1,66 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header, footer {
+    background-color: brown;
+    color: bisque;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section>div {
+    width: 50%;
+    padding: 2rem;
+}
+
+fieldset {
+    border-color: salmon;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.control-group,
+.check-group,
+.radio-group,
+.button-group {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.control-group label,
+.control-group input,
+.control-group textarea,
+.control-group select
+ {
+    display: block;
+    width: 100%
+}
+
+.control-group input,
+.control-group textarea,
+.control-group select
+{
+    border: none;
+    padding-top: 0.6rem;
+    border-bottom: 1px solid salmon
+}
+
+.button-group  button{
+    font-weight: bold;
+    color: salmon;
+    padding: 0.6rem;
+
+}
