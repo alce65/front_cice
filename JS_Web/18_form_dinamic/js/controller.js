@@ -1,9 +1,11 @@
 import { GENEROS } from "./datos.js";
+import { ajax } from "./ajax.js"
 
 export function controller () {
     console.log('Controller cargado')
     console.log(GENEROS)
     const aGeneros = GENEROS
+    const URLBASE = 'https://www.googleapis.com/books/v1/volumes'
     let iGenero
     let iAutor
     let html = ''
@@ -11,6 +13,7 @@ export function controller () {
     let selectGeneros = document.querySelector('#generos')
     let selectAutores = document.querySelector('#autores')
     let btnPedir = document.querySelector("#btnPedir")
+    let inNum = document.querySelector('#num')
 
     selectGeneros.addEventListener('change', onChangeGenero)
     selectAutores.addEventListener('change', onChangeAutores)
@@ -55,31 +58,10 @@ export function controller () {
     function onClickPedir() {
         console.clear()
         console.log('Iniciando peticion')
-        ajax(aGeneros[iGenero].autores[iAutor].value)
-    }
-    
-}
-
-
-function ajax(clave) {
-
-    const url = ` https://www.googleapis.com/books/v1/volumes?q=inauthor:${clave}&fields=items(volumeInfo(publisher,title,language))&maxResults=20`
-
-
-    
-    const http = new XMLHttpRequest()
-
-    http.addEventListener('readystatechange', onResponse)
-    //  http.onreadystatechange = onResponse
-
-    http.open('GET', url)
-    http.send(null)
-
-    function onResponse() {
-        console.log(http.readyState)
-        if (http.readyState == 4 && http.status == 200) {
-            procesarRespuesta(http.responseText)
-        }
+        let url = URLBASE + `?q=inauthor:${aGeneros[iGenero].autores[iAutor].value}`
+        url += `&fields=items(volumeInfo(publisher,title,language))`
+        url += `&maxResults=${inNum.value}` 
+        ajax(url, 'GET', procesarRespuesta)
     }
 }
 
@@ -98,7 +80,7 @@ function mostrarRespuesta(aDatos) {
     aDatos.forEach( (item) => tabla += `
         <tr>
         <td>${item.title}</td>
-        <td>${item.publisher}</td>
+        <td>${item.publisher?item.publisher:'n/d'}</td>
         <td>${item.language}</td></tr>`)
     tabla += '</table>'
     output.innerHTML = tabla
