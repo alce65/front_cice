@@ -23,8 +23,25 @@ section {
 
 section>div {
     width: 50%;
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
+
+section>div.output {
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.tabla {
+    color: brown;
+    background-color: bisque; 
+    width: 90%;
+    padding: 1rem 0.2rem;
+}
+
+.tabla tr:nth-of-type(2n) {
+    background-color: darkkhaki;
+}
+
 
 fieldset {
     border-color: salmon;
