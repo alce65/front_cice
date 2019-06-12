@@ -1,0 +1,94 @@
+*, *::after, *::before, *:after, *:before {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    color: bisque;
+    padding: 2rem;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.main-header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 2rem;
+    display: flex;  
+    flex-direction: column; 
+    align-items: center; 
+    min-height: 60vh;
+}
+
+section output {
+    min-height: 20vh;
+    min-width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 228, 196, 0.425);
+    border: 1px solid rgb(255, 228, 196);
+    box-shadow: 5px 5px 5px 0px rgba(173,168,173,0.75); 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+section output figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+section output figcaption {
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: lightgray;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+ }
+
+ section output figure img {
+     border: 1px solid lightgray;
+     border-radius: 20px;
+ } 
+
+ section output div.correo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+ }
+
+
+/* CSS del footer*/
+
+.main-footer {
+    background-color: brown;
+    color: bisque;
+    padding-top: 1.2rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+figcaption {
+    text-transform: capitalize;
+}
+
+.chico {
+    color: darkmagenta;
+}
+
+.chica {
+    color: darkolivegreen
+}
