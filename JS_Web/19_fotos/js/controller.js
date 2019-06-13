@@ -129,22 +129,15 @@ export function controller() {
                 let url = URL + `/${itemActual}`
                 fetch(url, {method: 'PATCH', body: JSON.stringify(datos), headers: myHeaders})
                 .then (response => response.json())
-                .then (data =>  {
-                    let index
-                    aFotos.some( (item, i) => { if(item.id == itemActual) {
-                                                        index = i
-                                                        return true
-                    }})
-                    console.log(index)
-                    console.log(data)
-                    aFotos.splice(index,1,data)
+                .then (data =>  {  
+                    aFotos.splice(indexFoto(),1,data)
                     renderFotos()
                 })                
             }
         }
         modifyFotoDlg.close()
     }
-
+ 
     function onDelete(ev) {
         itemActual =  ev.target.dataset.idDb
         console.log('Borrando', itemActual)
@@ -152,15 +145,29 @@ export function controller() {
         console.log(url)
 
         let myHeaders = new Headers({
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Credentials': true
         });
 
+        fetch(url, {method: 'DELETE', headers: myHeaders})
+        .then (response => response.json())
+        .then (data =>  
+            { if (data) {
+                aFotos.splice(indexFoto(),1)
+                renderFotos()
+            } 
+        })
 
-        fetch('url', {method: 'DELETE', headers: myHeaders})
-        .then (response => {
-            console.log(response)
-            response.json()})
-        .then (data =>  console.log(data))
-        .catch (error => console.error(error))
+    }
+
+    function indexFoto() {
+        let index
+        aFotos.some( (item, i) => { if(item.id == itemActual) {
+                                            index = i
+                                            return true
+                                        }
+                                    })
+        console.log(index)
+        return index
     }
 }
