@@ -34,8 +34,11 @@
             <label for="url">Foto</label>
             <input type="url" name="url" id="url" value="https://via.placeholder.com/600/92c952">
         </div>
-        <button type="button" id="btnAddFoto">Aceptar</button>
-        <button type="button" id="btnCancelAddFoto">Cancelar</button>
+        <div class="center">
+            <button type="button" id="btnAddFoto">Aceptar</button>
+            <button type="button" id="btnCancelAddFoto">Cancelar</button>            
+        </div>
+
     </dialog>
     <dialog id="modifyFotoDlg">
         <h2>Modificar titulo de la foto</h2>
@@ -43,8 +46,17 @@
             <label for="modi_title">Titulo</label>
             <input type="text" name="modi_title" id="modi_title" placeholder="title">
         </div>
-        <button type="button" id="btnModifyFoto">Aceptar</button>
-        <button type="button" id="btnCancelModifyFoto">Cancelar</button>
+        <div class="center">
+            <button type="button" id="btnModifyFoto">Aceptar</button>
+            <button type="button" id="btnCancelModifyFoto">Cancelar</button>
+        </div>
+    </dialog>
+    <dialog id="deleteFotoDlg">
+        <h2>¿Desea realmente borrar la foto?</h2>
+        <div class="center">
+            <button type="button" id="btnDeleteFoto">Aceptar</button>
+            <button type="button" id="btnCancelDeleteFoto">Cancelar</button>
+        </div>
     </dialog>
     <footer>
         <address>Alejandro Cerezo</address>

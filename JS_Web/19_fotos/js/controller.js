@@ -20,6 +20,9 @@ export function controller() {
     const modifyFotoDlg = document.querySelector('#modifyFotoDlg')
     const btnModifyFoto = document.querySelector('#btnModifyFoto')
     const btnCancelModifyFoto = document.querySelector('#btnCancelModifyFoto')
+    const deleteFotoDlg = document.querySelector('#deleteFotoDlg')
+    const btnDeleteFoto = document.querySelector('#btnDeleteFoto')
+    const btnCancelDeleteFoto = document.querySelector('#btnCancelDeleteFoto')
 
 
     // Manejadores de eventos
@@ -28,6 +31,8 @@ export function controller() {
     btnCancelAddFoto.addEventListener('click', onClickDlgAdd)
     btnModifyFoto.addEventListener('click', onClickDlgModify)
     btnCancelModifyFoto.addEventListener('click', onClickDlgModify)
+    btnDeleteFoto.addEventListener('click', onClickDlgDelete)
+    btnCancelDeleteFoto.addEventListener('click', onClickDlgDelete)
 
     // Código inicial
 
@@ -77,9 +82,14 @@ export function controller() {
 
     function onModify(ev) {
         itemActual =  ev.target.dataset.idDb
-        console.log('Modificando', itemActual)
         modifyFotoDlg.showModal()
     }
+
+    function onDelete(ev) {
+        itemActual =  ev.target.dataset.idDb
+        deleteFotoDlg.showModal()
+   }
+    
 
     function onClickDlgAdd(ev) {
 
@@ -137,27 +147,22 @@ export function controller() {
         }
         modifyFotoDlg.close()
     }
- 
-    function onDelete(ev) {
-        itemActual =  ev.target.dataset.idDb
-        console.log('Borrando', itemActual)
-        let url = URL + `/${itemActual}`
-        console.log(url)
 
-        let myHeaders = new Headers({
-            "Content-Type": "application/json",
-            'Access-Control-Allow-Credentials': true
-        });
+    function onClickDlgDelete(ev)  {
+        let id = ev.target.id // 
+        if (id == 'btnDeleteFoto') {
+            let url = URL + `/${itemActual}`
 
-        fetch(url, {method: 'DELETE', headers: myHeaders})
-        .then (response => response.json())
-        .then (data =>  
-            { if (data) {
-                aFotos.splice(indexFoto(),1)
-                renderFotos()
-            } 
-        })
-
+            fetch(url, {method: 'DELETE'})
+            .then (response => response.json())
+            .then (data =>  
+                { if (data) {
+                    aFotos.splice(indexFoto(),1)
+                    renderFotos()
+                } 
+            })
+        }
+        deleteFotoDlg.close()
     }
 
     function indexFoto() {

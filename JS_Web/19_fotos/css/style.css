@@ -28,6 +28,20 @@ section figure {
 dialog {
     border: none;
     background-color: bisque;
+    border: 4px ridge burlywood;
+    padding: 3rem;
+}
+
+dialog::after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -10;
 }
 
 dialog div {
@@ -35,4 +49,8 @@ dialog div {
     padding: 0rem 1rem;
     display: flex;
     justify-content: space-between;
+}
+.center {
+    display: flex;
+    justify-content: center;
 }
