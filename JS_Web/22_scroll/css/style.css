@@ -17,7 +17,17 @@ body {
     font-family: 'Permanent Marker', cursive;
 }
 
-.main-header h1 {
+.sticky-header {
+    padding-top: 0;
+    padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.main-header h1,
+.sticky-header h1 {
     margin: 0;
     padding: 0;
 }
@@ -25,8 +35,11 @@ body {
 .main-header p {
     margin-bottom: 0;
     margin-top: 0.2rem;
-    /* display: none; */
     visibility: hidden;
+}
+
+.sticky-header p {
+    display: none;
 }
 
 .main-header:hover p {
@@ -57,6 +70,14 @@ body {
 .main-menu a {
     display: block;
     padding: 1rem;
+}
+
+.sticky-header .main-menu a {
+    padding: 0.2rem 1rem;
+}
+
+.menu .activo {
+    color: goldenrod;
 }
 
 /* Layout con display flex */

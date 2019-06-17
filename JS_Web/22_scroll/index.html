@@ -11,19 +11,20 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
         crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/bootstrap.js" type="module"></script>
 </head>
-<body>
-    <header class="main-header">
+<body id="body">
+    <header id="main-header" class="main-header">
         <div>
             <h1>Scroll</h1>
             <p>Ejemplo del uso del evento scroll</p>
         </div>
         <nav class="menu main-menu">
             <ol>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#porfolio">Porfolio</a></li>
-                <li><a href="#clientes">Clientes</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#body" data-orden="0" class="activo">Inicio</a></li>
+                <li><a href="#porfolio" data-orden="1">Porfolio</a></li>
+                <li><a href="#clientes" data-orden="2">Clientes</a></li>
+                <li><a href="#nosotros" data-orden="3">Nosotros</a></li>
             </ol>            
         </nav>            
     </header>
@@ -78,56 +79,57 @@
                     <p>Rem earum cum consequatur eum nam officiis aspernatur nobis doloribus vitae repudiandae minima iure rerum, magnam voluptate quam commodi eligendi incidunt sit in eaque fuga? Impedit sed possimus molestias sunt!</p>
                     <p>Mollitia vitae est rem voluptatem cumque? Repellat esse, id sint ipsam commodi alias molestias. Fuga architecto eligendi magnam. Illum sapiente nisi incidunt vel modi a explicabo earum, dolore accusantium corrupti!</p>    
                 </article>                
-                <section id="clientes">
-                    <header>
-                        <h2>Clientes</h2>
-                    </header>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ratione dicta. Excepturi earum qui, labore eum eius, odit fugiat quam corporis nam maxime voluptas vel architecto voluptatum tempora ipsam dolores.</p>
-                    <p>Neque quam hic sit ipsum veniam esse eos dignissimos alias nesciunt perferendis blanditiis laborum atque eius minima rerum corrupti provident vitae, qui mollitia facilis quas. Quam possimus fugit doloribus facilis.</p>
-                    <article>
-                        <h3>
-                            Cliente 1</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, iusto dignissimos, explicabo maxime quas adipisci est assumenda, quis voluptatibus omnis illum. Illum ducimus quam voluptate placeat, suscipit aliquid magni dolor.</p>
-                            <p>Qui esse assumenda recusandae magnam culpa eligendi blanditiis. Quae deserunt iste accusantium labore itaque. Quae amet, magni laboriosam quidem, sit minus tenetur labore provident, non vel culpa eligendi ipsum ullam!</p>
-                            <p>Dolor, nisi. Totam id culpa error voluptate reprehenderit perspiciatis, ab pariatur quod obcaecati est voluptatibus nemo eos iusto illo laboriosam quos commodi vero laudantium mollitia. Et provident iure impedit maxime.</p>
-                        
-                    </article>
-                    <article>
-                        <h3>
-                            Cliente 2</h3>
-                            <p>Earum itaque amet magnam cupiditate quidem distinctio expedita illum molestiae, architecto voluptatibus est, quod rem optio laudantium necessitatibus iure dolore modi animi, exercitationem libero alias aliquam assumenda ullam? Sint, id.</p>
-                            <p>Impedit culpa minima aliquid, totam hic sit tempora deserunt sed excepturi atque aliquam suscipit, aspernatur voluptatem ipsa dolore beatae tempore delectus repellendus eos, repellat eveniet. Doloremque incidunt molestias similique reiciendis!</p>
-                            <p>Nulla repellendus totam distinctio iste nisi provident, blanditiis sunt. Alias minima nostrum fugit officia mollitia repellendus, odit provident eaque cum sit at rem fuga voluptas molestiae accusantium unde laborum. Suscipit!</p>
-                        
-                    </article>
-                    <article>
-                        <h3>
-                            Cliente 3</h3>
-                            <p>Placeat quo animi, minus, mollitia praesentium pariatur fugiat saepe quaerat error, vel dicta. Eaque illum repudiandae minima est ducimus quaerat ex, qui pariatur sed doloremque nostrum aut totam architecto corrupti.</p>
-                            <p>Adipisci numquam laboriosam corporis aliquam voluptate quibusdam neque suscipit, placeat accusamus harum, quod illo non eum quis nesciunt quidem dolore reiciendis. Sunt incidunt vero excepturi est! Sunt velit id distinctio?</p>
-                            <p>Iste ipsa magnam suscipit molestias placeat necessitatibus architecto beatae illum, nemo ut nulla voluptate repellat ex nihil delectus eveniet corporis ad facere? Dolor sequi omnis porro doloribus illum accusantium veritatis!</p>
-                        
-                    </article>
-                    <article>
-                        <h3>
-                            Cliente 4</h3>
-                            <p>Id quia distinctio natus, culpa, nulla ipsa, eius mollitia ipsum ex est vel harum quasi itaque sapiente? Impedit est suscipit eius fugiat a officiis natus perferendis odio alias, molestias culpa.</p>
-                            <p>Velit vitae architecto minus ea dignissimos in magnam facere eveniet eaque deserunt distinctio natus sed laboriosam rerum incidunt placeat quos possimus blanditiis, nostrum eos cupiditate ad error dicta dolorem. Iure?</p>
-                            <p>Distinctio provident dolorem laborum? Animi rem repellat aut nemo quaerat? Iusto sequi deleniti quis recusandae, autem maxime perspiciatis voluptatibus repellat, adipisci accusantium placeat. Amet ad mollitia rem asperiores et maxime!</p>
-                        
-                    </article>
-                </section>
-                <section id="nosotros"> 
-                    <header>
-                        <h2>Acerca de nosotros</h2>
-                    </header>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum corrupti cupiditate veniam, rerum officia laboriosam ipsa alias atque ducimus exercitationem magni voluptate excepturi sunt consectetur optio debitis voluptatibus deleniti molestias!</p>
-                    <p>Neque architecto laudantium non nam expedita odit, alias tempore facere in numquam maiores sint sunt. Modi excepturi dolor tempora dignissimos, accusamus asperiores provident iure, consequuntur dolorum illum obcaecati deserunt. Nam?</p>
-                    <p>Laboriosam atque dolores laborum labore dignissimos, qui vero doloribus excepturi amet quasi fugit natus mollitia, culpa accusamus quo et sapiente assumenda minus consectetur ad sunt veritatis? Maxime incidunt sit deleniti?</p>
-                    <p>Harum soluta delectus perferendis quae minima sint, doloribus numquam quisquam quasi illum sed quaerat ullam. Sequi dolores perspiciatis, debitis corrupti illo quam reiciendis modi, laudantium tempora error vitae facilis dolorum.</p>
-                    <p>Voluptas dicta, non magni odio fuga mollitia tenetur eveniet reprehenderit repellat veniam minus dolore sint voluptatem harum neque minima, impedit quo animi deserunt autem ipsam maxime error laborum in! Minima?</p>
-                    <p>Excepturi laboriosam non optio dignissimos quidem eveniet porro reprehenderit fugit quam, nisi deleniti. Ratione eveniet libero perspiciatis nihil eius excepturi inventore nemo ipsum illum, magni quisquam accusantium nam. Quo, dicta?</p>    
-                </section>
+
+            </section>            
+            <section id="clientes">
+                <header>
+                    <h2>Clientes</h2>
+                </header>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ratione dicta. Excepturi earum qui, labore eum eius, odit fugiat quam corporis nam maxime voluptas vel architecto voluptatum tempora ipsam dolores.</p>
+                <p>Neque quam hic sit ipsum veniam esse eos dignissimos alias nesciunt perferendis blanditiis laborum atque eius minima rerum corrupti provident vitae, qui mollitia facilis quas. Quam possimus fugit doloribus facilis.</p>
+                <article>
+                    <h3>
+                        Cliente 1</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, iusto dignissimos, explicabo maxime quas adipisci est assumenda, quis voluptatibus omnis illum. Illum ducimus quam voluptate placeat, suscipit aliquid magni dolor.</p>
+                        <p>Qui esse assumenda recusandae magnam culpa eligendi blanditiis. Quae deserunt iste accusantium labore itaque. Quae amet, magni laboriosam quidem, sit minus tenetur labore provident, non vel culpa eligendi ipsum ullam!</p>
+                        <p>Dolor, nisi. Totam id culpa error voluptate reprehenderit perspiciatis, ab pariatur quod obcaecati est voluptatibus nemo eos iusto illo laboriosam quos commodi vero laudantium mollitia. Et provident iure impedit maxime.</p>
+                    
+                </article>
+                <article>
+                    <h3>
+                        Cliente 2</h3>
+                        <p>Earum itaque amet magnam cupiditate quidem distinctio expedita illum molestiae, architecto voluptatibus est, quod rem optio laudantium necessitatibus iure dolore modi animi, exercitationem libero alias aliquam assumenda ullam? Sint, id.</p>
+                        <p>Impedit culpa minima aliquid, totam hic sit tempora deserunt sed excepturi atque aliquam suscipit, aspernatur voluptatem ipsa dolore beatae tempore delectus repellendus eos, repellat eveniet. Doloremque incidunt molestias similique reiciendis!</p>
+                        <p>Nulla repellendus totam distinctio iste nisi provident, blanditiis sunt. Alias minima nostrum fugit officia mollitia repellendus, odit provident eaque cum sit at rem fuga voluptas molestiae accusantium unde laborum. Suscipit!</p>
+                    
+                </article>
+                <article>
+                    <h3>
+                        Cliente 3</h3>
+                        <p>Placeat quo animi, minus, mollitia praesentium pariatur fugiat saepe quaerat error, vel dicta. Eaque illum repudiandae minima est ducimus quaerat ex, qui pariatur sed doloremque nostrum aut totam architecto corrupti.</p>
+                        <p>Adipisci numquam laboriosam corporis aliquam voluptate quibusdam neque suscipit, placeat accusamus harum, quod illo non eum quis nesciunt quidem dolore reiciendis. Sunt incidunt vero excepturi est! Sunt velit id distinctio?</p>
+                        <p>Iste ipsa magnam suscipit molestias placeat necessitatibus architecto beatae illum, nemo ut nulla voluptate repellat ex nihil delectus eveniet corporis ad facere? Dolor sequi omnis porro doloribus illum accusantium veritatis!</p>
+                    
+                </article>
+                <article>
+                    <h3>
+                        Cliente 4</h3>
+                        <p>Id quia distinctio natus, culpa, nulla ipsa, eius mollitia ipsum ex est vel harum quasi itaque sapiente? Impedit est suscipit eius fugiat a officiis natus perferendis odio alias, molestias culpa.</p>
+                        <p>Velit vitae architecto minus ea dignissimos in magnam facere eveniet eaque deserunt distinctio natus sed laboriosam rerum incidunt placeat quos possimus blanditiis, nostrum eos cupiditate ad error dicta dolorem. Iure?</p>
+                        <p>Distinctio provident dolorem laborum? Animi rem repellat aut nemo quaerat? Iusto sequi deleniti quis recusandae, autem maxime perspiciatis voluptatibus repellat, adipisci accusantium placeat. Amet ad mollitia rem asperiores et maxime!</p>
+                    
+                </article>
+            </section>
+            <section id="nosotros"> 
+                <header>
+                    <h2>Acerca de nosotros</h2>
+                </header>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum corrupti cupiditate veniam, rerum officia laboriosam ipsa alias atque ducimus exercitationem magni voluptate excepturi sunt consectetur optio debitis voluptatibus deleniti molestias!</p>
+                <p>Neque architecto laudantium non nam expedita odit, alias tempore facere in numquam maiores sint sunt. Modi excepturi dolor tempora dignissimos, accusamus asperiores provident iure, consequuntur dolorum illum obcaecati deserunt. Nam?</p>
+                <p>Laboriosam atque dolores laborum labore dignissimos, qui vero doloribus excepturi amet quasi fugit natus mollitia, culpa accusamus quo et sapiente assumenda minus consectetur ad sunt veritatis? Maxime incidunt sit deleniti?</p>
+                <p>Harum soluta delectus perferendis quae minima sint, doloribus numquam quisquam quasi illum sed quaerat ullam. Sequi dolores perspiciatis, debitis corrupti illo quam reiciendis modi, laudantium tempora error vitae facilis dolorum.</p>
+                <p>Voluptas dicta, non magni odio fuga mollitia tenetur eveniet reprehenderit repellat veniam minus dolore sint voluptatem harum neque minima, impedit quo animi deserunt autem ipsam maxime error laborum in! Minima?</p>
+                <p>Excepturi laboriosam non optio dignissimos quidem eveniet porro reprehenderit fugit quam, nisi deleniti. Ratione eveniet libero perspiciatis nihil eius excepturi inventore nemo ipsum illum, magni quisquam accusantium nam. Quo, dicta?</p>    
             </section>            
         </div>
         <aside class="main-aside">
