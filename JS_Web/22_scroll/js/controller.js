@@ -8,7 +8,7 @@ export function controller() {
     let header = document.querySelector('#main-header')
     let aItemsMenu = document.querySelectorAll('.main-menu a')
     let aSections = document.querySelectorAll('.main-content section')
-    let aOffSets = calculaOffSets()
+    let aOffSets = []
 
     // Manejadores de eventos
     window.addEventListener('scroll', onScroll)
@@ -32,6 +32,21 @@ export function controller() {
             header.classList.remove('sticky-header')
             isSticky = false
         }
+        let id
+        if (scrollY < aOffSets[1] - 50 ) {
+            // estoy en inicio
+            id  = 0
+        } else if (scrollY < aOffSets[2] - 50 ) {
+            // estoy en seccion 1 (porfolio)
+            id = 1
+        } else if (scrollY < aOffSets[3] - 50 ) {
+            // estoy en sección 2 (clientes) 
+            id = 2
+        } else { 
+            // estoy en sección 3 (nosotros) 
+            id = 3
+        }
+        ponActivo(id)
     }
 
     function onClickMenu(ev) {
@@ -40,21 +55,22 @@ export function controller() {
         if (id && !isSticky) { // click inicial en opción distinta de inicio 
             header.classList.add('sticky-header')
             isSticky = true
+            aOffSets = calculaOffSets()
         }
-        aOffSets = calculaOffSets()
-        
+        const altoStickyMenu = 50
         let destino = 0
         let offset =  aOffSets[id]        
-        aItemsMenu.forEach (item => item.classList.remove('activo'))
-        aItemsMenu[id].classList.add('activo')
         console.log('Item', id)
         console.log('offset', offset)
-        /* if (isSticky) { */
-            destino = offset - 50 
-       /*  } else {
-            destino = offset
-        } */
+        destino = offset - altoStickyMenu 
         window.scrollTo(0,destino)
+        ponActivo(id)
+        // window.scrollTo(0, aOffSets[id]-altoStickyMenu )
     }
 
+
+    function ponActivo(id) {
+        aItemsMenu.forEach (item => item.classList.remove('activo'))
+        aItemsMenu[id].classList.add('activo')
+    }
 }
