@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0rem;
+    align-items: center;
+    background-color: brown;
+    color: bisque;
+}
+
+header h1 {
+    margin: 0;
+    width: 90%;
+    text-align:center;
+}
+
+header div {
+    width: 10%
+}
+
+header div img {
+    max-width: 100%;
+}
