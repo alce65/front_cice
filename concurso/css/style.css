@@ -1,0 +1,155 @@
+*, *::after, *::before, *:after, *:before {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: brown;
+    color: bisque;
+    padding: 2rem;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.main-header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header p {
+    margin-bottom: 0;
+    margin-top: 0.2rem;
+    /* display: none; */
+    visibility: hidden;
+}
+
+.main-header:hover p {
+    /* display: initial; */
+    visibility: initial;
+}
+
+.menu ol, .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: inherit;
+    text-decoration: none;    
+}
+
+.main-menu {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.main-menu li {
+    display: inline-block;
+}
+
+.main-menu a {
+    display: block;
+    padding: 1rem;
+}
+
+/* Layout con display flex */
+ 
+.content-wrapper {
+    margin: 2rem;
+    display: flex;    
+}
+
+.main-content {
+    width: 70%; 
+    /*Atajo para flex-grow, flex-shrink flex-basis*/
+    /* flex: 3 1 10%; */
+    background-color: bisque;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.main-aside {
+    width: 30%;
+    /*  flex: 1 3 10%; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: gainsboro;
+    border: 1px solid
+}
+
+/* CSS del formulario */
+
+.curso {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+fieldset {
+    border-color: salmon;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.control-group,
+.check-group,
+.radio-group,
+.button-group {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.control-group label,
+.control-group input,
+.control-group textarea,
+.control-group select
+ {
+    display: block;
+    width: 100%
+}
+
+.control-group input,
+.control-group textarea,
+.control-group select
+{
+    border: none;
+    padding-top: 0.6rem;
+    border-bottom: 1px solid salmon
+}
+
+.button-group  button{
+    font-weight: bold;
+    color: salmon;
+    padding: 0.6rem;
+
+}
+
+div.resultados {
+    padding: 2rem;
+}
+
+/* CSS del footer*/
+
+.main-footer {
+    background-color: brown;
+    color: bisque;
+    padding-top: 1.2rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+
+.social-menu {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem
+}
+
+.social-menu li {
+    display: inline;
+}

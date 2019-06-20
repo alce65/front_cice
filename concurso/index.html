@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Concurso</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+        crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-3.4.0/jasmine.css">   
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+    <script src="./js/bootstrap.js" type="module"></script>
+    <!-- jasmine standalone... -->
+    <script src="jasmine/lib/jasmine-3.4.0/jasmine.js"></script>
+    <script src="jasmine/lib/jasmine-3.4.0/jasmine-html.js"></script>
+    <script src="jasmine/lib/jasmine-3.4.0/boot.js"></script>
+    <!-- include spec files here... -->
+    <script src="./js/render.spec.js" type="module"></script>
+    <script src="./js/helper.spec.js" type="module"></script>
+    <script src="./js/controller.spec.js" type="module"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div>
+            <h1>Concurso</h1>
+            <p>Ejercicio del Curso de Desarrollo Front</p>
+        </div>
+        <nav class="menu main-menu">
+            <ol>
+                <li><a href="#reyes">Reyes de España</a></li>
+            </ol>            
+        </nav>            
+    </header>
+    <div class="content-wrapper">
+        <div class="main-content">
+            <section id="reyes">
+                <header>
+                    <h2>Reyes de España</h2>
+                </header>
+                <p>Explicación</p>
+                <div id="formulario">
+                    <fieldset>
+                            <legend>Nombres de reyes</legend>
+                            <div class="control-group">
+                                <label for="in-nombre">Nombre de un rey de España</label>
+                                <input type="text" name="nombre" id="in-nombre" 
+                                    placeholder="Escribe un nombre válido" required minlength="3">
+                            </div>
+                    </fieldset>
+                    <div class="button-group">
+                        <button type="button" id="btn-probar">Comprobar</button>
+                        <button type="reset">Borrar</button>
+                    </div>
+                </div>
+                <div class="resultados">
+                    <output id="output"></output>
+                </div>
+                <dialog id="confirmar">
+                    <p>Enhorabuena</p>
+                    <output id="datosOutput"></output>
+                    <button id="btnNoConfirmar" type="button">Cerrar</button>
+                </dialog>
+            </section>
+        </div>
+        <aside class="main-aside">
+            <header>
+                <h2>CIFE</h2>
+            </header>
+            <p>Información sobre el patrocinador</p>
+            <footer>
+                <p>&copy; CIFE</p>
+            </footer>
+        </aside>
+    </div>
+    <footer class="main-footer">
+        <address>Alejandro Cerezo - CIFE</address>
+        <aside class="menu social-menu">
+            <ul>
+                <li><a href="#" title="Facebook" class="fab fa-facebook-square"></a></li>
+                <li><a href="#" title="Twitter"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#" title="Github"><i class="fab fa-github-square"></i></a></i></li>
+            </ul>
+        </aside>
+    </footer>
+</body>
+</html>

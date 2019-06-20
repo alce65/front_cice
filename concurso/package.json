@@ -1,0 +1,20 @@
+{
+  "name": "concurso",
+  "version": "1.0.0",
+  "description": "Ejercicio del Curso de Desarrollo Front",
+  "main": "index.js",
+  "scripts": {
+    "install" : "npm install jasmine",
+    "init" : "node ../angular-cife/node_modules/jasmine/bin/jasmine init",
+    "test": "..\\angular-cife\\node_modules\\jasmine\\bin\\jasmine"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "JS",
+    "Front"
+  ],
+  "author": "Alejandro Cerezo",
+  "license": "ISC"
+}
