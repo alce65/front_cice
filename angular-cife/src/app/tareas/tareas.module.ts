@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { TareasRoutingModule } from './tareas-routing.module';
 import { TareasComponent } from './tareas.component';
+import { ListaSimpleComponent } from './lista-simple/lista-simple.component';
 
 @NgModule({
-  declarations: [TareasComponent],
+  declarations: [TareasComponent, ListaSimpleComponent],
   imports: [
     CommonModule,
     TareasRoutingModule

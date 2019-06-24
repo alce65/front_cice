@@ -1,0 +1,27 @@
+
+<section>
+  <header>
+    <h2>
+      Componente saludar
+    </h2>
+  </header>
+  <div class="control-group">
+    <label for="nombre">{{ mensaje }}</label>
+    <!-- [] operador de propiedades -->
+    <input type="text" name="nombre" id="nombre" [placeholder]="mensaje"
+      [(ngModel)] = "nombre"> 
+   <!--  El operador de doble binding
+     equivalente a (input)="nombre = $event.target.value" y [value]="nombre" -->
+
+  </div>
+  <div class="control-group">
+    <!-- () operador de eventos -->
+    <button (click)="onClickBorrar($event)" type="button">Borrar</button>
+  </div>
+  <footer>
+    <!-- {{}} operador de interpolación de expresiones -->
+    <p>Hola {{ nombre == 'amigo' ? nombre : nombre.toUpperCase() }}</p> 
+     <!-- <p>Hola {{ nameFormat() }} </p>-->
+  </footer>
+</section>
+

@@ -1,0 +1,28 @@
+section {
+    margin-top: 2rem;
+    width: 50%;
+}
+
+header {
+    color: brown;
+    background-color:  bisque;
+}
+
+h2 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.control-group label, 
+.control-group input {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;    
+}
+
