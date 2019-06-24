@@ -1,6 +1,6 @@
 import { factorial, isPar } from './prueba';
 
-describe('La función factorial', () => {
+xdescribe('La función factorial', () => {
 
     it('should be 1 if n=1', () => {
         const n = 1;
@@ -28,7 +28,7 @@ describe('La función factorial', () => {
 
 });
 
-describe('La función is par..', () => {
+xdescribe('La función is par..', () => {
 
     it('should be par if n = 20', () => {
         const n = 20;

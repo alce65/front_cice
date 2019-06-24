@@ -22,4 +22,8 @@ describe('FooterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have as empresa 'CIFE - Fuenlabrada'`, () => {
+    expect(component.empresa).toEqual('CIFE - Fuenlabrada');
+  });
 });
