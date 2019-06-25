@@ -7,15 +7,24 @@
   <div class="control-group">
     <label for="tarea">Nueva tarea</label>
     <input type="text" name="tarea" id="tarea" 
-      [(ngModel)] = "tarea.nombre">
+      [(ngModel)]="tarea.nombre" (change)="onClickAdd()">
   </div>
   <div class="control-group">
-    <button (click)="onClickAdd()" type="button">Añadir</button>
+    <button (click)="onClickAdd()" type="button">Añadir</button>    
+    <button (click)="onClickDelete()" type="button" title="Borrar todas las tareas"
+      [disabled]="!aTareas.length">Borrar</button>
   </div>
   <footer *ngIf="aTareas.length">
     <p>Lista de tareas</p> 
     <ul>
-      <li *ngFor="let item of aTareas">{{ item.nombre }}</li>
+      <li *ngFor="let item of aTareas; let i = index">
+        <input type="checkbox" [name]="'check'+(i+1)" [id]="'check'+(i+1)"  
+          [(ngModel)] = "item.isCompleted" (click)="onSelectCheck()">
+        <span [contentEditable]="item.isEdited" 
+          (blur)="onBlur($event, i)">{{ item.nombre }}</span> -
+        <fa-icon [icon]="faEdit" class="icon" (click)="onClickEditar(i)"></fa-icon>
+        <fa-icon [icon]="faTrash" class="icon" (click)="onClickBorrar(i)"></fa-icon>
+      </li>
     </ul>
   </footer>
 </section>

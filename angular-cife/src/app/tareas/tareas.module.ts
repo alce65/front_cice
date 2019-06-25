@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { TareasRoutingModule } from './tareas-routing.module';
 import { TareasComponent } from './tareas.component';
 import { ListaSimpleComponent } from './lista-simple/lista-simple.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { ListaSimpleComponent } from './lista-simple/lista-simple.component';
   imports: [
     CommonModule,
     FormsModule,
+    FontAwesomeModule,
     TareasRoutingModule
   ]
 })
