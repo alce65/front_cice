@@ -1,3 +1,21 @@
-<p>
-  lista-simple works!
-</p>
+<section class="component">
+  <header>
+    <h2>
+      Lista de Tareas simple
+    </h2>
+  </header>
+  <div class="control-group">
+    <label for="tarea">Nueva tarea</label>
+    <input type="text" name="tarea" id="tarea" 
+      [(ngModel)] = "tarea.nombre">
+  </div>
+  <div class="control-group">
+    <button (click)="onClickAdd()" type="button">Añadir</button>
+  </div>
+  <footer *ngIf="aTareas.length">
+    <p>Lista de tareas</p> 
+    <ul>
+      <li *ngFor="let item of aTareas">{{ item.nombre }}</li>
+    </ul>
+  </footer>
+</section>
