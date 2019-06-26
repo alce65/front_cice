@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { ContactosRoutingModule } from './contactos-routing.module';
 import { ContactosComponent } from './contactos.component';
+import { FormTdComponent } from './form-td/form-td.component';
 
 @NgModule({
-  declarations: [ContactosComponent],
+  declarations: [ContactosComponent, FormTdComponent],
   imports: [
     CommonModule,
     ContactosRoutingModule

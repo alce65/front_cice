@@ -1,0 +1,17 @@
+<section class="component">
+  <header>
+    <h2>
+      Blog
+    </h2>
+  </header>
+  <main>
+    <app-nuevo-post (eventGuardar)="onGuardar($event)"></app-nuevo-post>
+    <div>
+      <ul>
+        <li *ngFor="let item of aPosts; let i = index">
+          <app-post [post]="item" [index]="i" (eventBorrar)="onBorrar($event)"></app-post>
+        </li>
+      </ul>
+    </div>  
+  </main>
+</section>

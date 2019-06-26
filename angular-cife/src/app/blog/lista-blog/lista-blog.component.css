@@ -1,0 +1,19 @@
+.component {
+    width: 100%;
+}
+
+main {
+    display: flex;
+}
+
+div {
+    display: block;
+    width: 50%;
+    padding: 1rem 1rem 1rem 2rem
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}

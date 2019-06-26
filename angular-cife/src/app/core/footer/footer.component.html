@@ -1,4 +1,4 @@
 <footer>
-  <address>{{autor}} | {{fecha.toLocaleDateString()}}</address>
+  <address>{{autor}} | {{fecha | date: 'fullDate' | titlecase}}</address>
   <small>&copy; {{empresa}}</small>
 </footer>

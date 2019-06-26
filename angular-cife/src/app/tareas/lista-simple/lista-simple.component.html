@@ -2,6 +2,7 @@
   <header>
     <h2>
       Lista de Tareas simple
+      <fa-icon [icon]="faAncla" [ngClass]="{'oculto': isOculto}"></fa-icon>
     </h2>
   </header>
   <div class="control-group">
@@ -17,7 +18,7 @@
   <footer *ngIf="aTareas.length">
     <p>Lista de tareas</p> 
     <ul>
-      <li *ngFor="let item of aTareas; let i = index">
+      <li *ngFor="let item of aTareas; let i = index" [ngClass]="{'completed': item.isCompleted }">
         <input type="checkbox" [name]="'check'+(i+1)" [id]="'check'+(i+1)"  
           [(ngModel)] = "item.isCompleted" (click)="onSelectCheck()">
         <span [contentEditable]="item.isEdited" 

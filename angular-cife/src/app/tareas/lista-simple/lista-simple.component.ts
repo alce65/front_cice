@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from 'src/app/models/tarea.model';
-import { faTrash, faEdit, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faAnchor, faTrash, faEdit, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
@@ -13,16 +13,22 @@ export class ListaSimpleComponent implements OnInit {
   aTareas: Array<Tarea>;
   faTrash: IconDefinition;
   faEdit: IconDefinition;
+  faAncla: IconDefinition;
   storageName: string;
+  isOculto: boolean;
 
   constructor(public ls: LocalStorageService) { }
 
   ngOnInit() {
     this.faTrash = faTrash;
     this.faEdit = faEdit;
+    this.faAncla = faAnchor;
     this.tarea = new Tarea();
     this.storageName = 'tareas';
     this.aTareas = this.ls.readStorage(this.storageName);
+    this.isOculto = false;
+
+    setInterval(() => this.isOculto = !this.isOculto, 10000);
   }
 
   onClickAdd() {
@@ -56,8 +62,8 @@ export class ListaSimpleComponent implements OnInit {
   }
 
   onSelectCheck() {
+    console.log('Click on checkbox');
     console.log(this.aTareas);
     this.ls.saveStorage(this.storageName, this.aTareas);
   }
-
 }
