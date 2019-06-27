@@ -4,20 +4,29 @@
       Formulario TD
     </h2>
   </header>
-  <form id="form_curso" action="https://jsonplaceholder.typicode.com/users" method="post">
+  <form id="form_curso" action="https://jsonplaceholder.typicode.com/users" method="post"
+    (submit)="onSubmit($event)" #formCurso = 'ngForm' >
     <fieldset>
         <legend>Datos personales</legend>
         <div class="control-group">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" 
-                [(ngModel)]="alumno.nombre"
+                [(ngModel)]="alumno.nombre" #refNombre = "ngModel"
                 placeholder="Escribe tu nombre" required minlength="3">
+        </div>
+        <div *ngIf="refNombre.invalid && refNombre.touched">
+            <p class="error" *ngIf="refNombre?.errors?.required">Es necesario completar el nombre</p>
+            <p class="error" *ngIf="refNombre?.errors?.minlength">La longitud del nombre debe ser al menos 3 caracteres</p>
         </div>
         <div class="control-group">
             <label for="apellido">Apellidos</label>
             <input type="text" name="apellido" id="apellido" 
-                [(ngModel)]="alumno.apellidos"
+                [(ngModel)]="alumno.apellidos" #refApellido = 'ngModel'
                 placeholder="Escribe tus apellidos" required minlength="3">
+        </div>
+        <div *ngIf="refApellido.invalid && refApellido.touched">
+            <p class="error" *ngIf="refApellido?.errors?.required">Es necesario completar el apellido</p>
+            <p class="error" *ngIf="refApellido?.errors?.minlength">La longitud del apellido debe ser al menos 3 caracteres</p>
         </div>
         <div class="control-group">
             <label for="dni">DNI</label>
@@ -33,10 +42,14 @@
         <div class="control-group">
             <label for="passwd">Contraseña</label>
             <input type="password" name="passwd" id="passwd" 
-            [(ngModel)]="alumno.password"
+            [(ngModel)]="alumno.password" #refPassw = 'ngModel'
             title="at least 6 characters, at least 1 upper case character, at least 1 lower case character, at least 1 numerical character & at least 1 special character"
             required pattern="(?=^.{6,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*">
         </div>
+        <div *ngIf="refPassw.invalid && refPassw.touched">
+            <p class="error" *ngIf="refPassw?.errors?.required">Es necesario completar la contraseñao</p>
+            <p class="error" *ngIf="refPassw?.errors?.pattern">La contraseña debe tener al menos 6 dígitos e incluir al menos 1 mayuscula, 1 minuscula, 1 número y otro caracter</p>
+        </div>        
         <div class="control-group">
             <label for="nacim">Fecha de nacimiento</label>
             <input type="date" name="nacim" id="nacim"
@@ -88,11 +101,20 @@
         </div>
     </fieldset>
     <div class="button-group">
-        <button type="submit">Enviar</button>
-        <button type="reset">Borrar</button>
+        <button type="submit" [disabled]="formCurso.invalid">Enviar</button>
+        <button type="reset">Borrar</button> 
+        <button type="button" (click)="onClickProbar()">Probar</button>
     </div>
   </form>
-   <div>
-       {{ alumno | json}}
-   </div> 
+  <dialog #refDlgConfirmar>
+        <p>Estos son los datos que se enviaran</p>
+        <div>
+            {{ alumno | json}}
+        </div>
+        <div class="button-group">
+            <button (click)="onClickDlg(true)">Enviar</button> 
+            <button (click)="onClickDlg(false)">Cancelar</button>
+        </div>
+       
+  </dialog>
 </section>
