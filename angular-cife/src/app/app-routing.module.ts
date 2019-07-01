@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'contactos', loadChildren: './contactos/contactos.module#ContactosModule' },
   // { path: 'libros', component: LibrosComponent },
   { path: 'libros', loadChildren: './libros/libros.module#LibrosModule' },
+  { path: 'about', loadChildren: './about/about.module#AboutModule' },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: 'home'}
 ];

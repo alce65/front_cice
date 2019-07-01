@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-libros-google',
@@ -9,17 +11,39 @@ export class LibrosGoogleComponent implements OnInit {
 
   clave: string;
   aTitulosLibros: Array<string>;
+  urlBase: string;
 
-  constructor() { }
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
     this.aTitulosLibros = [];
+    this.urlBase = 'https://www.googleapis.com/books/v1/volumes?q=intitle:';
   }
 
   onBuscar() {
     if (this.clave) {
-      // this.aTitulosLibros = this.booksMook.getLibros(this.clave);
-    }
+      const url = this.urlBase + '"' + this.clave + '"';
+      this.http.get(url).toPromise().then(
+        (response: any) => {
+          this.aTitulosLibros = response.items.map(
+            item => item.volumeInfo.title
+          );
+        }
+      ); }
   }
 
+  onBuscarRx() {
+    if (this.clave) {
+      const url = this.urlBase + '"' + this.clave + '"';
+      this.http.get(url)
+      .pipe(
+        // map( (response: any) => response.items.map( item => item.volumeInfo.title )
+      )
+      .subscribe(
+        (response: any) => {
+          this.aTitulosLibros = response.items.map( item => item.volumeInfo.title) ;
+        }
+    ); }
+  }
 }
+

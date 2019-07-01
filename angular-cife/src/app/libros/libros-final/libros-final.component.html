@@ -1,6 +1,6 @@
 <section class="component">
   <header>
-    <h2>Buscar Libros (Google)</h2>
+    <h2>Buscar Libros <br>(Google by service)</h2>
   </header>
   <div class="control-group">
     <label for="clave">Clave de búsqueda</label>
@@ -9,7 +9,7 @@
   </div>
   <div class="control-group">
     <button (click)="onBuscar()" type="button">Buscar</button>    
-    <button (click)="onBuscarRx()" type="button">Buscar Rx</button>
+    <!-- <button (click)="onBuscarAsinc()" type="button">Buscar Asinc</button> -->
   </div>
   <footer *ngIf="aTitulosLibros.length">
     <p>Lista de libros</p> 

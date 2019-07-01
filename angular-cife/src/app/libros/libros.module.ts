@@ -5,13 +5,16 @@ import { LibrosRoutingModule } from './libros-routing.module';
 import { LibrosComponent } from './libros.component';
 import { LibrosMookComponent } from './libros-mook/libros-mook.component';
 import { LibrosGoogleComponent } from './libros-google/libros-google.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LibrosFinalComponent } from './libros-final/libros-final.component';
 
 
 @NgModule({
-  declarations: [LibrosComponent, LibrosMookComponent, LibrosGoogleComponent],
+  declarations: [LibrosComponent, LibrosMookComponent, LibrosGoogleComponent, LibrosFinalComponent],
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     LibrosRoutingModule
   ]
 })
