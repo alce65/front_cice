@@ -36,13 +36,11 @@ export class LibrosGoogleComponent implements OnInit {
     if (this.clave) {
       const url = this.urlBase + '"' + this.clave + '"';
       this.http.get(url)
-      .pipe(
-        // map( (response: any) => response.items.map( item => item.volumeInfo.title )
-      )
-      .subscribe(
-        (response: any) => {
-          this.aTitulosLibros = response.items.map( item => item.volumeInfo.title) ;
-        }
+      .pipe<object>( map(
+        (response: any) => response.items.map( item => item.volumeInfo.title )
+        )).
+      subscribe(
+        (response: any) => this.aTitulosLibros = response
     ); }
   }
 }
