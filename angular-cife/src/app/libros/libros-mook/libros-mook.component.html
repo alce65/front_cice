@@ -1,0 +1,22 @@
+<section class="component">
+  <header>
+    <h2>Buscar Libros (Mock)</h2>
+  </header>
+  <div class="control-group">
+    <label for="clave">Clave de búsqueda</label>
+    <input type="text" name="clave" id="clave" 
+      [(ngModel)]="clave"> 
+  </div>
+  <div class="control-group">
+    <button (click)="onBuscar()" type="button">Buscar</button>    
+    <button (click)="onBuscarAsinc()" type="button">Buscar Asinc</button>
+  </div>
+  <footer *ngIf="aTitulosLibros.length">
+    <p>Lista de libros</p> 
+    <ul>
+      <li *ngFor="let item of aTitulosLibros">
+       {{ item }}</li>
+    </ul>
+  </footer>
+</section>
+
