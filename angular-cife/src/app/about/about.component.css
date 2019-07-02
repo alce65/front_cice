@@ -1,0 +1,5 @@
+:host {
+    display: block;
+    background-image: url(../../assets/dragon_komodo.jpg);
+    background-size: cover;
+}

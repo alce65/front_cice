@@ -23,5 +23,11 @@ export class LibrosFinalComponent implements OnInit {
     );
   }
 
+  onBuscarRx() {
+    this.books.getLibrosRx(this.clave).subscribe(
+      response => this.aTitulosLibros = response
+    );
+
+  }
 }
 

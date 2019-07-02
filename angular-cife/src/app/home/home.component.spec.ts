@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { SaludarComponent } from './saludar/saludar.component';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -14,7 +15,10 @@ describe('HomeComponent', () => {
         HomeComponent,
         SaludarComponent
        ],
-       imports: [FormsModule]
+       imports: [
+         FormsModule,
+         NgbModule
+        ]
     })
     .compileComponents();
   }));

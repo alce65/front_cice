@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { LibrosFinalComponent } from './libros-final.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 describe('LibrosFinalComponent', () => {
   let component: LibrosFinalComponent;
@@ -8,7 +10,11 @@ describe('LibrosFinalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LibrosFinalComponent ]
+      declarations: [ LibrosFinalComponent ],
+      imports: [
+        FormsModule,
+        HttpClientModule
+      ]
     })
     .compileComponents();
   }));
